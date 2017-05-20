@@ -33,10 +33,8 @@ class AcronymPlugin extends Plugin
             $raw .= "\n\n";
 
             // Append  acronyms to page
-            foreach ($acronyms as $acronym) {
-                $abbr = $acronym['abbr'];
-                $full = $acronym['full'];
-                $raw .= "*[${abbr}]: ${full}\n";
+            foreach ($acronyms as $key => $value) {
+                $raw .= "*[${key}]: ${value}\n";
             }
 
             // Put content back in

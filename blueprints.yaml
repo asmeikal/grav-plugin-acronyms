@@ -1,5 +1,5 @@
 name: Acronym
-version: 0.1.0
+version: 0.1.1
 description: Add Markdown Extra abbreviations to all pages.
 author:
   name: Michele Laurenti
@@ -20,13 +20,7 @@ form:
       validate:
         type: bool
     acronyms:
-      name: acronyms
-      type: list
+      type: array
       label: Acronyms
-      fields:
-        .abbr:
-          type: text
-          label: Acronym
-        .full:
-          type: text
-          label: Full text
+      placeholer_key: Acronym
+      placeholer_value: Long Name
