@@ -1,0 +1,6 @@
+enabled: true
+acronyms:
+  - abbr: HTML
+    full: Hyper Text Markup Language
+  - abbr: W3C
+    full: World Wide Web Consortium

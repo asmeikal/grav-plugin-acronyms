@@ -1,0 +1,32 @@
+name: Acronym
+version: 0.1.0
+description: Add Markdown Extra abbreviations to all pages.
+author:
+  name: Michele Laurenti
+  email: laurenti.1603064@studenti.uniroma1.it
+keywords: grav, plugin, markdown
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+    acronyms:
+      name: acronyms
+      type: list
+      label: Acronyms
+      fields:
+        .abbr:
+          type: text
+          label: Acronym
+        .full:
+          type: text
+          label: Full text
