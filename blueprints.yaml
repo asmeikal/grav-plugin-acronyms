@@ -20,13 +20,7 @@ form:
       validate:
         type: bool
     acronyms:
-      name: acronyms
-      type: list
+      type: array
       label: Acronyms
-      fields:
-        .abbr:
-          type: text
-          label: Acronym
-        .full:
-          type: text
-          label: Full text
+      placeholer_key: Acronym
+      placeholer_value: Long Name
