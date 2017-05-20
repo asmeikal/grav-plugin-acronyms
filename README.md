@@ -32,13 +32,11 @@ You should now have all the plugin files under
 Before configuring this plugin, you should copy the `user/plugins/acronym/acronym.yaml` to `user/config/plugins/acronym.yaml` and only edit that copy.
 
 To configure the plugin, edit the `acronym.yaml` file and specify the desired abbreviations under `acronyms`.
-Abbreviations are specified as a list of pairs, with `abbr` being the abbreviation, and `full` being its meaning.
+Abbreviations are specified as key-value pairs, with the key being the abbreviation (or acronym), and the value being the full name.
 
 ```yaml
 enabled: true
 acronyms:
-  - abbr: HTML
-    full: Hyper Text Markup Language
-  - abbr: W3C
-    full: World Wide Web Consortium
+  HTML: Hyper Text Markup Language
+  W3C: World Wide Web Consortium
 ```
