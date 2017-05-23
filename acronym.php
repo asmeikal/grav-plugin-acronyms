@@ -24,10 +24,20 @@ class AcronymPlugin extends Plugin
         $page = $event['page'];
         $config = $this->mergeConfig($page);
 
-        if (($this->config->get('system.pages.markdown.extra')) &&
-            (count($acronyms) > 0) &&
-            ($config->get('enabled')))
-        {
+        $enabled = $config->get('enabled');
+
+        // Check that page processes markdown
+        $enabled = $enabled && $page->process()['markdown'];
+
+        // Check that markdown extra is enabled
+        if (isset($page->header()->markdown) &&
+            array_key_exists('extra', $page->header()->markdown)) {
+            $enabled = $enabled && $page->header()->markdown['extra'];
+        } else {
+            $enabled = $enabled && $this->config->get('system.pages.markdown.extra');
+        }
+
+        if ($enabled && (count($acronyms) > 0)) {
             // Get initial content
             $raw = $page->getRawContent(); 
             $raw .= "\n\n";
