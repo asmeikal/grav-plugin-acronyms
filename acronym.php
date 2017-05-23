@@ -12,7 +12,7 @@ class AcronymPlugin extends Plugin
     public static function getSubscribedEvents()
     {
         return [
-        'onPageContentRaw' => ['onPageContentRaw', 0]
+            'onPageContentRaw' => ['onPageContentRaw', 0]
         ];
     }
 
