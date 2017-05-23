@@ -1,10 +1,13 @@
 name: Acronym
-version: 0.1.1
+version: 0.1.2
 description: Add Markdown Extra abbreviations to all pages.
+icon: list
 author:
   name: Michele Laurenti
   email: laurenti.1603064@studenti.uniroma1.it
 keywords: grav, plugin, markdown
+homepage: https://github.com/asmeikal/grav-plugin-acronym
+bugs: https://github.com/asmeikal/grav-plugin-acronym/issues
 
 form:
   validation: strict
@@ -24,3 +27,4 @@ form:
       label: Acronyms
       placeholer_key: Acronym
       placeholer_value: Long Name
+
