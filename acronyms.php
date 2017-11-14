@@ -4,12 +4,12 @@ namespace Grav\Plugin;
 use Grav\Common\Plugin;
 use RocketTheme\Toolbox\Event\Event;
 
-class AcronymPlugin extends Plugin
+class AcronymsPlugin extends Plugin
 {
     /**
      * @return array
      */
-    public static function getSubscribedEvents()
+    public static function onPluginsInitialized()
     {
         return [
             'onPageContentRaw' => ['onPageContentRaw', 0]
@@ -18,16 +18,17 @@ class AcronymPlugin extends Plugin
 
     public function onPageContentRaw(Event $event)
     {
-        // Defined acronyms
-        $acronyms = $this->config->get('plugins.acronym.acronyms', array());
 
         $page = $event['page'];
-        $config = $this->mergeConfig($page);
+        $config = $this->mergeConfig($page, $deep=true);
 
         $enabled = $config->get('enabled');
 
         // Check that page processes markdown
         $enabled = $enabled && $page->process()['markdown'];
+
+        // Defined acronyms
+        $acronyms = $config->get('acronyms', array());
 
         // Check that markdown extra is enabled
         if (isset($page->header()->markdown) &&
@@ -39,7 +40,7 @@ class AcronymPlugin extends Plugin
 
         if ($enabled && (count($acronyms) > 0)) {
             // Get initial content
-            $raw = $page->getRawContent(); 
+            $raw = $page->getRawContent();
             $raw .= "\n\n";
 
             // Append  acronyms to page

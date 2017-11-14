@@ -1,3 +1,9 @@
+# v0.1.3
+1. [](#improved)
+  * Change package name to a more coherent one.
+2. [](#new)
+  * Add per-page acronym definition.
+
 # v0.1.2
 1. [](#improved)
 	* Implement more sensible conditions to enable/disable acronym injection in page.
